@@ -89,7 +89,8 @@ public class TestDriver {
 				case "5": // UNLOCK
 					currentMethodCalled = TestDriverMethod.UNLOCK;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					
+					int unlockNumber = getInputFromUser("Enter Lock#");
+					returnedValue = acc.unlock(unlockNumber);
 					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
