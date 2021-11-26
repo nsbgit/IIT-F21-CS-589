@@ -57,7 +57,7 @@ public class TestDriver {
 					break;
 				case "1": // DEPOSIT
 					currentMethodCalled = TestDriverMethod.DEPOSIT;
-					int depositAmount = getInputFromUser("");
+					int depositAmount = getInputFromUser("Enter Deposit Amount");
 					returnedValue = acc.deposit(depositAmount);
 					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
