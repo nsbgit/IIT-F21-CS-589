@@ -8,6 +8,7 @@
  */
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class TestDriver {
 
@@ -22,6 +23,10 @@ public class TestDriver {
 		// TODO Auto-generated method stub
 
 		String choice = "";
+		TestDriverMethod currentMethodCalled = null;
+		ArrayList<String> methodsCalled = new ArrayList<String>();
+		String parameters = "";
+		//TestSuiteData testSuiteData = new TestSuiteData();
 
 		// show welcome message
 		// TODO uncomment
@@ -31,26 +36,39 @@ public class TestDriver {
 		do {
 			choice = showMenu();
 			System.out.println("\nYour choice is : " + choice);
+			currentMethodCalled = null;
+			parameters = "";
 			
 			switch (choice) {
 				case "0": // OPEN
+					currentMethodCalled = TestDriverMethod.OPEN;
 					break;
-				case "1": // LOGIN
+				case "1": // DEPOSIT
+					currentMethodCalled = TestDriverMethod.DEPOSIT;
 					break;
-				case "2": // LOGOUT
+				case "2": // WITHDRAW
+					currentMethodCalled = TestDriverMethod.WITHDRAW;
 					break;
-				case "3": // PIN
+				case "3": // BALANCE
+					currentMethodCalled = TestDriverMethod.BALANCE;
 					break;
-				case "4": // DEPOSIT
+				case "4": // LOCK
+					currentMethodCalled = TestDriverMethod.LOCK;
 					break;
-				case "5": // WITHDRAW
+				case "5": // UNLOCK
+					currentMethodCalled = TestDriverMethod.UNLOCK;
 					break;
-				case "6": // BALANCE
+				case "6": // LOGIN
+					currentMethodCalled = TestDriverMethod.LOGIN;
 					break;
-				case "7": // LOCK
+				case "7": // PIN
+					currentMethodCalled = TestDriverMethod.PIN;
 					break;
-				case "8": // UNLOCK
+				case "8": // LOGOUT
+					currentMethodCalled = TestDriverMethod.LOGOUT;
 					break;
+					
+				
 				case "a": // SHOW BALANCE
 					break;
 				case "b": // SHOW STATE
@@ -58,7 +76,11 @@ public class TestDriver {
 				default:
 					System.out.println("DEFAULT");
 			}
+			
+			TestSuiteData.add(currentMethodCalled, parameters, null, null, null);
+			
 		} while (!choice.equals("q"));
+		
 		System.out.println("Quitting Account Driver...");
 		System.out.println(strLine + "\n\t\tTHANK YOU!!!\n" + strLine);
 	}
