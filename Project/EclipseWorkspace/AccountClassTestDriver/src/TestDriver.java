@@ -29,20 +29,24 @@ public class TestDriver {
 
 		// show menu
 		do {
-			showMenu();
+			choice = showMenu();
 		} while (choice.equals("q"));
 	}
 
-	private static void showMenu() {
+	private static String showMenu() {
 		// TODO Auto-generated method stub
 		int i = 0;
+		char j= 'a';
+		
+		// Show Driver Method for the Account Class
 		System.out.println("\n\nDriver for the Account"
 				+ "\n" + strLine + "\n");
+		
 		for (TestDriverMethod testDriverMethod : TestDriverMethod.values()) { 
 		    System.out.println(String.format("\t%d. %s", i++, testDriverMethod));
 		}
 		
-		char j= 'a';
+		// Show Testing-Oriented Method for Account Class
 		System.out.println("\n\nTesting-Oriented Methods"
 				+ "\n" + strLine + "\n");
 		for (TestingOrientedMethod testingOrientedMethod : TestingOrientedMethod.values()) { 
@@ -52,16 +56,17 @@ public class TestDriver {
 		System.out.println(String.format("\n\n\t%c. %s", 'q', "Quit Account Driver"));
 		System.out.println("\n\nEnter you choice:\n");
 		
-		String choice = scanner.nextLine();
-		boolean isValidInput = false;
+		String choice = scanner.nextLine().toLowerCase();
 		
+		// Validate Input
 		while(!validateInput(choice, i, j)) {
-			System.out.println("\n\nInvalid Input!!!");
+			System.out.println("\n\nINVALID INPUT!!!");
 			System.out.println("Enter you choice:\n");
 			
+			choice = scanner.nextLine().toLowerCase();
 		}
 		
-		
+		return choice;
 	}
 
 	private static boolean validateInput(String choice, int i, char j) {
