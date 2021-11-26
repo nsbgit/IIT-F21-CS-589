@@ -8,12 +8,12 @@
  */
 public enum TestDriverMethod {
 	OPEN,
-	LOGIN,
-	LOGOUT,
-	PIN,
 	DEPOSIT,
 	WITHDRAW,
 	BALANCE,
 	LOCK,
-	UNLOCK
+	UNLOCK,
+	LOGIN,
+	PIN,
+	LOGOUT
 }
