@@ -193,7 +193,7 @@ public class TestDriver {
 		boolean hasError = false;
 
 		System.out.println(message + ":\n");
-
+		String input = scanner.nextLine().toLowerCase();
 		do {
 			if (hasError) {
 				System.out.println("Invalid Input!!!");
@@ -202,7 +202,8 @@ public class TestDriver {
 			}
 
 			try {
-				data = Integer.parseInt(message);
+				data = Integer.parseInt(input);
+				hasError = false;
 			} catch (Exception e) {
 				hasError = true;
 			}
