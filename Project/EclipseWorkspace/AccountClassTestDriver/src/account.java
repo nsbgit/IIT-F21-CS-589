@@ -111,9 +111,8 @@ public class account {
 	}
 
 	/**
-	 * The Desciption of the method to explain what the method does
+	 * allows to logout from the account
 	 * 
-	 * @param the parameters used by the method
 	 * @return the value returned by the method  0 --> Successful, -1 --> ERROR
 	 */
 	public final int logout() {
