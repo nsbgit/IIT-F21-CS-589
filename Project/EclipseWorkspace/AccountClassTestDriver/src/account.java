@@ -23,13 +23,12 @@ public class account {
 	private int x3;
 	/**
 	 * State
-	 * <br/>-1 --> INITIAL --> Create
-	 * <br/>0 --> IDLE --> OPEN/ LOGED OUT
-	 * <br/>1 --> CHECK PIN --> LOGGED IN
-	 * <br/>2 --> x2(LOCKED STATUS) = 1 --> LOCKED
+	 * <br/>-1	-->	INITIAL
+	 * <br/>0	-->	IDLE
+	 * <br/>1	-->	CHECK PIN --> LOGGED IN
+	 * <br/>2	-->	x2(LOCKED STATUS) = 1 --> LOCKED
 	 * <br/>x1(Balance) < x7(Minimum Balance) --> OVERDRAWN
-	 * <br/>READY
-	 * <br/>		PIN CORRECT (NOT LOGGED IN) - IDEAL STATE
+	 * <br/>otherwise READY
 	 */
 	private int x4;
 	/**
@@ -61,6 +60,30 @@ public class account {
 	public final int show_balance() {
 		return x1;
 	} // testing oriented method
+	
+	/**
+	 * Get Current State
+	 * @return Current State
+	 * */
+	public final State getCurrentState() {
+		switch (x4) {
+		case -1:
+			return State.INITIAL;
+			
+		case 0:
+			return State.IDLE;
+			
+		case 1:
+			return State.CHECK_PIN;
+			
+		case 2:
+			return (x2 == 1) ? State.LOCKED : ((x1 < x7) ? State.OVERDRAWN : State.READY);
+
+		default:
+			break;
+		}
+		return null;
+	}
 
 	/**
 	 * Constructor
