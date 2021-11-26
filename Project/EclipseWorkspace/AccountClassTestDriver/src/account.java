@@ -4,7 +4,7 @@
 
 public class account {
 	/**
-	 * 
+	 * Maximum Login Attempt
 	 */
 	private int x0;
 	/**
@@ -12,7 +12,9 @@ public class account {
 	 */
 	private int x1;
 	/**
-	 * 
+	 * Lock Status
+	 * <br/>0 --> UNLOCKED
+	 * <br/>1 --> LOCKED
 	 */
 	private int x2;
 	/**
@@ -20,7 +22,11 @@ public class account {
 	 */
 	private int x3;
 	/**
-	 * 
+	 * Login Status
+	 * <br/>-1 --> Create
+	 * <br/>0 --> OPEN/ LOGED OUT
+	 * <br/>1 --> LOGGED IN
+	 * <br/>2 --> PIN CORRECT (NOT LOGGED IN) - IDEAL STATE
 	 */
 	private int x4;
 	/**
@@ -28,19 +34,19 @@ public class account {
 	 */
 	private int x5;
 	/**
-	 * 
+	 * Transaction Fee
 	 */
 	private int x6;
 	/**
-	 * 
+	 * Minimum Balance
 	 */
 	private int x7;
 	/**
-	 * 
+	 * Lock Number
 	 */
 	private int x8;
 	/**
-	 * 
+	 * Number of Attempt
 	 */
 	private int x9;
 
@@ -144,10 +150,9 @@ public class account {
 	}
 
 	/**
-	 * The Desciption of the method to explain what the method does
+	 * returns the value of the account balance
 	 * 
-	 * @param the parameters used by the method
-	 * @return the value returned by the method  0 --> Successful, -1 --> ERROR
+	 * @return the value of the account balance
 	 */
 	public final int balance() {
 		if (x4 != 2) {
@@ -157,9 +162,10 @@ public class account {
 	}
 
 	/**
-	 * The Desciption of the method to explain what the method does
+	 * locks an account where x is the lock #
 	 * 
-	 * @param the parameters used by the method
+	 * @param	x
+	 * 			Lock Number
 	 * @return the value returned by the method  0 --> Successful, -1 --> ERROR
 	 */
 	public final int lock(int x) {
@@ -179,9 +185,10 @@ public class account {
 	}
 
 	/**
-	 * The Desciption of the method to explain what the method does
+	 * unlocks an account when x equals to the correct lock #
 	 * 
-	 * @param the parameters used by the method
+	 * @param	x
+	 * 			Lock Number
 	 * @return the value returned by the method  0 --> Successful, -1 --> ERROR
 	 */
 	public final int unlock(int x) {
@@ -224,9 +231,10 @@ public class account {
 	}
 
 	/**
-	 * The Desciption of the method to explain what the method does
+	 * withdraws amount w from the account
 	 * 
-	 * @param the parameters used by the method
+	 * @param	w
+	 * 			Amount to withdraw from the account
 	 * @return the value returned by the method  0 --> Successful, -1 --> ERROR
 	 */
 	public final int withdraw(int w) {
