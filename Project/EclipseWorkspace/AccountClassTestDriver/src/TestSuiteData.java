@@ -37,7 +37,7 @@ public class TestSuiteData {
 
 		}
 
-		return testCase.toString();
+		return testCase.toString().toLowerCase();
 	}
 
 	/**
