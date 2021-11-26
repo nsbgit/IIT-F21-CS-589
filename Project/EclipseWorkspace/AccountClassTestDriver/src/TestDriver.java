@@ -25,7 +25,7 @@ public class TestDriver {
 
 		// show welcome message
 		// TODO uncomment
-		showWelcomeMessage();
+		//showWelcomeMessage();
 
 		// show menu
 		do {
