@@ -86,7 +86,7 @@ public class account {
 	}
 
 	/**
-	 * Get Locked Status
+	 * Get Locked Status (Testing-Oriented Method)
 	 * @return Locked Status
 	 * */
 	public final LockedStatus getLockedStatus() {
@@ -94,7 +94,7 @@ public class account {
 	}
 	
 	/**
-	 * Get Number of Unsuccessful Login Attempts
+	 * Get Number of Unsuccessful Login Attempts (Testing-Oriented Method)
 	 * @return Number of Unsuccessful Login Attempts
 	 * */
 	public final int getNumbeOfUnsuccessfulLoginAttemts() {
