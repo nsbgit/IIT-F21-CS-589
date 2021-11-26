@@ -67,7 +67,8 @@ public class TestDriver {
 					currentMethodCalled = TestDriverMethod.WITHDRAW;
 					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					
+					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
+					int withdrawAmount = getInputFromUser("Enter Withdraw Amount");
 					pressAnyKeyToContinue();
 					break;
 				case "3": // BALANCE
