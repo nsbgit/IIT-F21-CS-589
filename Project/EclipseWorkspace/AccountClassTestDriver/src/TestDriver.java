@@ -30,7 +30,10 @@ public class TestDriver {
 		// show menu
 		do {
 			choice = showMenu();
-		} while (choice.equals("q"));
+			System.out.println("\nYour choice is : " + choice);
+		} while (!choice.equals("q"));
+		System.out.println("Quitting Account Driver...");
+		System.out.println(strLine + "\n\t\tTHANK YOU!!!\n" + strLine);
 	}
 
 	private static String showMenu() {
@@ -80,7 +83,7 @@ public class TestDriver {
 		catch (Exception e) {
 			if (choice.length() == 1) {
 				char c = choice.charAt(0);
-				isValidInput = (c >= 'a' && c < j) || ch == 'q'; 
+				isValidInput = (c >= 'a' && c < j) || (c == 'q'); 
 			}
 		}
 		return isValidInput;
