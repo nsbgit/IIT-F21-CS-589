@@ -74,14 +74,14 @@ public class TestDriver {
 				case "3": // BALANCE
 					currentMethodCalled = TestDriverMethod.BALANCE;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					
+					returnedValue = acc.balance();
 					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "4": // LOCK
 					currentMethodCalled = TestDriverMethod.LOCK;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-
+					
 					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
