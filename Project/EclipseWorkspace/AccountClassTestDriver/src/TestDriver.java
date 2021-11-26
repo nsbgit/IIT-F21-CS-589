@@ -44,13 +44,19 @@ public class TestDriver {
 			parameters = "";
 			returnedValue = -2;
 			
+			int accountNumber;
+			int pin;
+			int balance;
+			int amount;
+			int lockNumber;
+			
 			switch (choice) {
 				case "0": // OPEN
 					currentMethodCalled = TestDriverMethod.OPEN;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					int accountNumber = getInputFromUser("Enter Account#");
-					int pin = getInputFromUser("Enter PIN");
-					int balance = getInputFromUser("Enter initial balance");
+					accountNumber = getInputFromUser("Enter Account#");
+					pin = getInputFromUser("Enter PIN");
+					balance = getInputFromUser("Enter initial balance");
 					returnedValue = acc.open(accountNumber, pin, balance);
 					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
@@ -58,16 +64,16 @@ public class TestDriver {
 				case "1": // DEPOSIT
 					currentMethodCalled = TestDriverMethod.DEPOSIT;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					int depositAmount = getInputFromUser("Enter Deposit Amount");
-					returnedValue = acc.deposit(depositAmount);
+					amount = getInputFromUser("Enter Deposit Amount");
+					returnedValue = acc.deposit(amount);
 					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "2": // WITHDRAW
 					currentMethodCalled = TestDriverMethod.WITHDRAW;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					int withdrawAmount = getInputFromUser("Enter Withdraw Amount");
-					returnedValue = acc.withdraw(withdrawAmount);
+					amount = getInputFromUser("Enter Withdraw Amount");
+					returnedValue = acc.withdraw(amount);
 					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
@@ -81,7 +87,7 @@ public class TestDriver {
 				case "4": // LOCK
 					currentMethodCalled = TestDriverMethod.LOCK;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					int lockNumber = getInputFromUser("Enter Lock#");
+					lockNumber = getInputFromUser("Enter Lock#");
 					returnedValue = acc.lock(lockNumber);
 					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
@@ -89,23 +95,23 @@ public class TestDriver {
 				case "5": // UNLOCK
 					currentMethodCalled = TestDriverMethod.UNLOCK;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					int unlockNumber = getInputFromUser("Enter Lock#");
-					returnedValue = acc.unlock(unlockNumber);
+					lockNumber = getInputFromUser("Enter Lock#");
+					returnedValue = acc.unlock(lockNumber);
 					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "6": // LOGIN
 					currentMethodCalled = TestDriverMethod.LOGIN;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					int accountNumberForLogin = getInputFromUser("Enter Account#");
-					returnedValue = acc.login(accountNumberForLogin);
+					accountNumber = getInputFromUser("Enter Account#");
+					returnedValue = acc.login(accountNumber);
 					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "7": // PIN
 					currentMethodCalled = TestDriverMethod.PIN;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-
+					int pin
 					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
