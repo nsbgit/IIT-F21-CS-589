@@ -57,60 +57,60 @@ public class TestDriver {
 					break;
 				case "1": // DEPOSIT
 					currentMethodCalled = TestDriverMethod.DEPOSIT;
+					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					int depositAmount = getInputFromUser("Enter Deposit Amount");
 					returnedValue = acc.deposit(depositAmount);
 					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
-					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					pressAnyKeyToContinue();
 					break;
 				case "2": // WITHDRAW
 					currentMethodCalled = TestDriverMethod.WITHDRAW;
-					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					int withdrawAmount = getInputFromUser("Enter Withdraw Amount");
+					returnedValue = acc.withdraw(withdrawAmount);
 					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "3": // BALANCE
 					currentMethodCalled = TestDriverMethod.BALANCE;
-					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					
+					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "4": // LOCK
 					currentMethodCalled = TestDriverMethod.LOCK;
-					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					
+
+					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "5": // UNLOCK
 					currentMethodCalled = TestDriverMethod.UNLOCK;
-					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					
+
+					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "6": // LOGIN
 					currentMethodCalled = TestDriverMethod.LOGIN;
-					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					
+
+					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "7": // PIN
 					currentMethodCalled = TestDriverMethod.PIN;
-					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					
+
+					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "8": // LOGOUT
 					currentMethodCalled = TestDriverMethod.LOGOUT;
-					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					
+
+					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 					
