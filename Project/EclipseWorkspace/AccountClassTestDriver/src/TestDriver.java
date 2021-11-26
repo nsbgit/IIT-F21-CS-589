@@ -111,7 +111,8 @@ public class TestDriver {
 				case "7": // PIN
 					currentMethodCalled = TestDriverMethod.PIN;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					int pin
+					pin = getInputFromUser("Enter PIN");
+					returnedValue = acc.pin(pin);
 					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
