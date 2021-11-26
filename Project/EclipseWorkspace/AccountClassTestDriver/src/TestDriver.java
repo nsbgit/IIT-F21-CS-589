@@ -52,7 +52,7 @@ public class TestDriver {
 					int pin = getInputFromUser("Enter PIN");
 					int balance = getInputFromUser("Enter initial balance");
 					returnedValue = acc.open(accountNumber, pin, balance);
-					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
+					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "1": // DEPOSIT
@@ -60,7 +60,7 @@ public class TestDriver {
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					int depositAmount = getInputFromUser("Enter Deposit Amount");
 					returnedValue = acc.deposit(depositAmount);
-					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
+					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "2": // WITHDRAW
@@ -68,14 +68,14 @@ public class TestDriver {
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					int withdrawAmount = getInputFromUser("Enter Withdraw Amount");
 					returnedValue = acc.withdraw(withdrawAmount);
-					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
+					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "3": // BALANCE
 					currentMethodCalled = TestDriverMethod.BALANCE;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					returnedValue = acc.balance();
-					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
+					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "4": // LOCK
@@ -83,7 +83,7 @@ public class TestDriver {
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					int lockNumber = getInputFromUser("Enter Lock#");
 					returnedValue = acc.lock(lockNumber);
-					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
+					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "5": // UNLOCK
@@ -91,28 +91,29 @@ public class TestDriver {
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					int unlockNumber = getInputFromUser("Enter Lock#");
 					returnedValue = acc.unlock(unlockNumber);
-					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
+					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "6": // LOGIN
 					currentMethodCalled = TestDriverMethod.LOGIN;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-
-					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
+					int accountNumberForLogin = getInputFromUser("Enter Account#");
+					returnedValue = acc.login(accountNumberForLogin);
+					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "7": // PIN
 					currentMethodCalled = TestDriverMethod.PIN;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 
-					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
+					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "8": // LOGOUT
 					currentMethodCalled = TestDriverMethod.LOGOUT;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 
-					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
+					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 					
