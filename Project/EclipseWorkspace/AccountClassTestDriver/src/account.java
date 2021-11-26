@@ -53,7 +53,7 @@ public class account {
 	private int x9;
 
 	/**
-	 * Shows Balance
+	 * Shows Balance (Testing-Oriented Method)
 	 *
 	 * @return Current Balance
 	 */
@@ -62,7 +62,7 @@ public class account {
 	} // testing oriented method
 	
 	/**
-	 * Get Current State
+	 * Get Current State (Testing-Oriented Method)
 	 * @return Current State
 	 * */
 	public final State getCurrentState() {
@@ -85,6 +85,14 @@ public class account {
 		return null;
 	}
 
+	/**
+	 * Get Locked Status
+	 * @return Locked Status
+	 * */
+	public final LockedStatus getLockedStatus() {
+		return (x2 == 0)? LockedStatus.UNLOCKED : LockedStatus.LOCKED;
+	}
+	
 	/**
 	 * Constructor
 	 */
