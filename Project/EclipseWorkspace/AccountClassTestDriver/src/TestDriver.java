@@ -148,6 +148,10 @@ public class TestDriver {
 				break;
 
 			case "c": // SHOW LOCKED STATUS
+				currentTestingOrientedMethodCalled = TestingOrientedMethod.SHOW_LOCKED_STATUS;
+				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+				System.out.println(String.format("Locked Status: %s", acc.getLockedStatus()).replace("_", " "));
+				pressAnyKeyToContinue();
 				break;
 				
 			case "d": // SHOW NUBER OF UNSUCCESSFUL LOGIN ATTEMPTS
