@@ -75,7 +75,7 @@ public class account {
 	 * sets balance to the value of x, pin number to the value of y, and an account # to the value of z
 	 * 
 	 * @param	z
-	 * 			Balance
+	 * 			Account Number
 	 * @param	y
 	 * 			PIN
 	 * @param	x
