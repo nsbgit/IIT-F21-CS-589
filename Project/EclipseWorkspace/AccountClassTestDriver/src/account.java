@@ -197,9 +197,10 @@ public class account {
 	}
 
 	/**
-	 * The Desciption of the method to explain what the method does
+	 * deposits amount d to the account
 	 * 
-	 * @param the parameters used by the method
+	 * @param	d
+	 * 			Amount to deposit
 	 * @return the value returned by the method  0 --> Successful, -1 --> ERROR
 	 */
 	public final int deposit(int d) {
