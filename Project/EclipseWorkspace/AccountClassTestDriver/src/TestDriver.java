@@ -155,6 +155,10 @@ public class TestDriver {
 				break;
 				
 			case "d": // SHOW NUBER OF UNSUCCESSFUL LOGIN ATTEMPTS
+				currentTestingOrientedMethodCalled = TestingOrientedMethod.SHOW_NUMBER_OF_UNSECCESSFUL_LOGIN_ATTEMPTS;
+				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+				System.out.println(String.format("Number of Unsuccessful Login Attempts: %d", acc.getNumbeOfUnsuccessfulLoginAttemts()));
+				pressAnyKeyToContinue();
 				break;
 				
 			default:
