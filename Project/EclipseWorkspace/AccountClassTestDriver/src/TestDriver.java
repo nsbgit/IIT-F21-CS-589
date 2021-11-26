@@ -24,6 +24,7 @@ public class TestDriver {
 
 		String choice = "";
 		TestDriverMethod currentMethodCalled = null;
+		TestingOrientedMethod currentTestingOrientedMethodCalled = null;
 		ArrayList<String> methodsCalled = new ArrayList<String>();
 		String parameters = "";
 		//TestSuiteData testSuiteData = new TestSuiteData();
@@ -37,35 +38,63 @@ public class TestDriver {
 			choice = showMenu();
 			System.out.println("\nYour choice is : " + choice);
 			currentMethodCalled = null;
+			currentTestingOrientedMethodCalled = null;
 			parameters = "";
 			
 			switch (choice) {
 				case "0": // OPEN
 					currentMethodCalled = TestDriverMethod.OPEN;
+					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+					
+					pressAnyKeyToContinue();
 					break;
 				case "1": // DEPOSIT
 					currentMethodCalled = TestDriverMethod.DEPOSIT;
+					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+					
+					pressAnyKeyToContinue();
 					break;
 				case "2": // WITHDRAW
 					currentMethodCalled = TestDriverMethod.WITHDRAW;
+					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+					
+					pressAnyKeyToContinue();
 					break;
 				case "3": // BALANCE
 					currentMethodCalled = TestDriverMethod.BALANCE;
+					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+					
+					pressAnyKeyToContinue();
 					break;
 				case "4": // LOCK
 					currentMethodCalled = TestDriverMethod.LOCK;
+					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+					
+					pressAnyKeyToContinue();
 					break;
 				case "5": // UNLOCK
 					currentMethodCalled = TestDriverMethod.UNLOCK;
+					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+					
+					pressAnyKeyToContinue();
 					break;
 				case "6": // LOGIN
 					currentMethodCalled = TestDriverMethod.LOGIN;
+					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+					
+					pressAnyKeyToContinue();
 					break;
 				case "7": // PIN
 					currentMethodCalled = TestDriverMethod.PIN;
+					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+					
+					pressAnyKeyToContinue();
 					break;
 				case "8": // LOGOUT
 					currentMethodCalled = TestDriverMethod.LOGOUT;
+					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+					
+					pressAnyKeyToContinue();
 					break;
 					
 				
@@ -84,6 +113,23 @@ public class TestDriver {
 		System.out.println("Quitting Account Driver...");
 		System.out.println(strLine + "\n\t\tTHANK YOU!!!\n" + strLine);
 		System.out.println(String.format("Test: %s", TestSuiteData.getTestCase()));
+	}
+
+	private static void printCurrentMethodInfo(TestDriverMethod currentMethodCalled,
+			TestingOrientedMethod currentTestingOrientedMethodCalled) {
+		// TODO Auto-generated method stub
+		System.out.println("\n\n");
+		if (currentMethodCalled != null) {
+			System.out.println("Class: Account");
+			System.out.println("Type: Class Method");
+			System.out.println("Method: " + currentMethodCalled);
+		}
+		
+		if (currentTestingOrientedMethodCalled != null) {
+			System.out.println("Class: Account");
+			System.out.println("Type: Testing - Oriented Method");
+			System.out.println("Method: " + currentTestingOrientedMethodCalled);
+		}
 	}
 
 	private static String showMenu() {
