@@ -83,6 +83,7 @@ public class TestDriver {
 		
 		System.out.println("Quitting Account Driver...");
 		System.out.println(strLine + "\n\t\tTHANK YOU!!!\n" + strLine);
+		TestSuiteData.getTestCase();
 	}
 
 	private static String showMenu() {
