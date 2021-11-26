@@ -9,10 +9,10 @@ import java.util.ArrayList;
  *
  */
 public class TestSuiteData {
-	private StringBuilder testCase;
-	private StringBuilder states;
-	private StringBuilder paths;
-	private StringBuilder output;
+	private static StringBuilder testCase;
+	private static StringBuilder states;
+	private static StringBuilder paths;
+	private static StringBuilder output;
 
 	private static ArrayList<String> methodsCalled = new ArrayList<String>();
 	private static ArrayList<String> transitStates = new ArrayList<String>();
@@ -22,7 +22,7 @@ public class TestSuiteData {
 	/**
 	 * @return the testCase
 	 */
-	public String getTestCase() {
+	public static String getTestCase() {
 		testCase = new StringBuilder();
 
 		boolean isFirst = true;
@@ -43,7 +43,7 @@ public class TestSuiteData {
 	/**
 	 * @return the states
 	 */
-	public String getStates() {
+	public static String getStates() {
 		states = new StringBuilder();
 		return states.toString().toUpperCase();
 	}
@@ -51,7 +51,7 @@ public class TestSuiteData {
 	/**
 	 * @return the paths
 	 */
-	public String getPaths() {
+	public static String getPaths() {
 		paths = new StringBuilder();
 		return paths.toString().toUpperCase();
 	}
