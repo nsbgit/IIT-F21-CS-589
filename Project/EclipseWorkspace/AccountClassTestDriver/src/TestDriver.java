@@ -17,6 +17,7 @@ public class TestDriver {
 	private static Scanner scanner = new Scanner(System.in);
 
 	/**
+	 * Main Method
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -180,6 +181,12 @@ public class TestDriver {
 		System.out.println(String.format("Test: %s", TestSuiteData.getTestCase()));
 	}
 
+	/**
+	 * Get Valid User Input
+	 * @param	message
+	 * 			Message to print for taking input from user
+	 * @return	Valid User Input
+	 * */
 	private static int getInputFromUser(String message) {
 		// TODO Auto-generated method stub
 		int data = -1;
@@ -204,6 +211,13 @@ public class TestDriver {
 		return data;
 	}
 
+	/**
+	 * Print Current Invoked Method Information
+	 * @param	currentMethodCalled
+	 * 			TestDriverMethod enum value of current Test Driver Method or null
+	 * @param	currentTestingOrientedMethodCalled
+	 * 			TestingOrientedMethod enum value of current Test-Oriented Method or null
+	 * */
 	private static void printCurrentMethodInfo(TestDriverMethod currentMethodCalled,
 			TestingOrientedMethod currentTestingOrientedMethodCalled) {
 		// TODO Auto-generated method stub
@@ -221,6 +235,10 @@ public class TestDriver {
 		}
 	}
 
+	/**
+	 * Show Menu
+	 * @return Valid choice
+	 * */
 	private static String showMenu() {
 		// TODO Auto-generated method stub
 		int i = 0;
@@ -271,6 +289,10 @@ public class TestDriver {
 		return isValidInput;
 	}
 
+	
+	/**
+	 * Show Welcome Message
+	 * */
 	@SuppressWarnings("unused")
 	private static void showWelcomeMessage() {
 		// TODO Auto-generated method stub
@@ -283,6 +305,10 @@ public class TestDriver {
 		pressAnyKeyToContinue();
 
 	}
+	
+	/**
+	 * Press Enter Key to Continue
+	 * */
 
 	private static void pressAnyKeyToContinue() {
 		// TODO Auto-generated method stub
