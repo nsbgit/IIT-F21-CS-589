@@ -12,7 +12,7 @@ public class account {
 	 */
 	private int x1;
 	/**
-	 * Lock Status
+	 * Locked Status
 	 * <br/>0 --> UNLOCKED
 	 * <br/>1 --> LOCKED
 	 */
@@ -22,11 +22,14 @@ public class account {
 	 */
 	private int x3;
 	/**
-	 * Login Status
-	 * <br/>-1 --> Create
-	 * <br/>0 --> OPEN/ LOGED OUT
-	 * <br/>1 --> LOGGED IN
-	 * <br/>2 --> PIN CORRECT (NOT LOGGED IN) - IDEAL STATE
+	 * State
+	 * <br/>-1 --> INITIAL --> Create
+	 * <br/>0 --> IDLE --> OPEN/ LOGED OUT
+	 * <br/>1 --> CHECK PIN --> LOGGED IN
+	 * <br/>2 --> x2(LOCKED STATUS) = 1 --> LOCKED
+	 * <br/>x1(Balance) < x7(Minimum Balance) --> OVERDRAWN
+	 * <br/>READY
+	 * <br/>		PIN CORRECT (NOT LOGGED IN) - IDEAL STATE
 	 */
 	private int x4;
 	/**
@@ -102,10 +105,10 @@ public class account {
 	 * @return the value returned by the method  0 --> Successful, -1 --> ERROR
 	 */
 	public final int pin(int x) {
-		if (x4 != 1) {
+		if (x4 != 1) { // Check if the current state is CHECK PIN
 			return -1;
 		}
-		if (x == x3) {
+		if (x == x3) { // TODO BUG T8 T16
 			x4 = 2;
 			return 0;
 		} else {
