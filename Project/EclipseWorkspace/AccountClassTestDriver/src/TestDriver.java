@@ -141,6 +141,10 @@ public class TestDriver {
 				break;
 
 			case "b": // SHOW STATE
+				currentTestingOrientedMethodCalled = TestingOrientedMethod.SHOW_STATE;
+				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+				System.out.println(String.format("State = %s", acc.getCurrentState()).replace("_", " "));
+				pressAnyKeyToContinue();
 				break;
 
 			case "c": // SHOW LOCKED STATUS
