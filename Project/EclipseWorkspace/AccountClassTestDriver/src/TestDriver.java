@@ -59,6 +59,7 @@ public class TestDriver {
 				pin = getInputFromUser("Enter PIN");
 				balance = getInputFromUser("Enter initial balance");
 				returnedValue = acc.open(accountNumber, pin, balance);
+				parameters = String.format("%d %d %d", accountNumber, pin, balance);
 				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 				pressAnyKeyToContinue();
 				break;
@@ -68,6 +69,7 @@ public class TestDriver {
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 				amount = getInputFromUser("Enter Deposit Amount");
 				returnedValue = acc.deposit(amount);
+				parameters = String.format("%d", amount);
 				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 				pressAnyKeyToContinue();
 				break;
@@ -77,6 +79,7 @@ public class TestDriver {
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 				amount = getInputFromUser("Enter Withdraw Amount");
 				returnedValue = acc.withdraw(amount);
+				parameters = String.format("%d", amount);
 				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 				pressAnyKeyToContinue();
 				break;
@@ -94,6 +97,7 @@ public class TestDriver {
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 				lockNumber = getInputFromUser("Enter Lock#");
 				returnedValue = acc.lock(lockNumber);
+				parameters = String.format("%d", lockNumber);
 				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 				pressAnyKeyToContinue();
 				break;
@@ -103,6 +107,7 @@ public class TestDriver {
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 				lockNumber = getInputFromUser("Enter Lock#");
 				returnedValue = acc.unlock(lockNumber);
+				parameters = String.format("%d", lockNumber);
 				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 				pressAnyKeyToContinue();
 				break;
@@ -112,6 +117,7 @@ public class TestDriver {
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 				accountNumber = getInputFromUser("Enter Account#");
 				returnedValue = acc.login(accountNumber);
+				parameters = String.format("%d", accountNumber);
 				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 				pressAnyKeyToContinue();
 				break;
@@ -121,6 +127,7 @@ public class TestDriver {
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 				pin = getInputFromUser("Enter PIN");
 				returnedValue = acc.pin(pin);
+				parameters = String.format("%d", pin);
 				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 				pressAnyKeyToContinue();
 				break;
