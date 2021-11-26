@@ -143,7 +143,7 @@ public class TestDriver {
 			case "b": // SHOW STATE
 				currentTestingOrientedMethodCalled = TestingOrientedMethod.SHOW_STATE;
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-				System.out.println(String.format("State = %s", acc.getCurrentState()).replace("_", " "));
+				System.out.println(String.format("State: %s", acc.getCurrentState()).replace("_", " "));
 				pressAnyKeyToContinue();
 				break;
 
