@@ -31,6 +31,33 @@ public class TestDriver {
 		do {
 			choice = showMenu();
 			System.out.println("\nYour choice is : " + choice);
+			
+			switch (choice) {
+				case "0": // OPEN
+					break;
+				case "1": // LOGIN
+					break;
+				case "2": // LOGOUT
+					break;
+				case "3": // PIN
+					break;
+				case "4": // DEPOSIT
+					break;
+				case "5": // WITHDRAW
+					break;
+				case "6": // BALANCE
+					break;
+				case "7": // LOCK
+					break;
+				case "8": // UNLOCK
+					break;
+				case "a": // SHOW BALANCE
+					break;
+				case "b": // SHOW STATE
+					break;
+				default:
+					System.out.println("DEFAULT");
+			}
 		} while (!choice.equals("q"));
 		System.out.println("Quitting Account Driver...");
 		System.out.println(strLine + "\n\t\tTHANK YOU!!!\n" + strLine);
