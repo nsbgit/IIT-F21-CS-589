@@ -1,3 +1,4 @@
+
 /**
  * 
  */
@@ -28,12 +29,12 @@ public class TestDriver {
 		ArrayList<String> methodsCalled = new ArrayList<String>();
 		String parameters = "";
 		int returnedValue = -2;
-		
+
 		account acc = new account();
 
 		// show welcome message
 		// TODO uncomment
-		//showWelcomeMessage();
+		// showWelcomeMessage();
 
 		// show menu
 		do {
@@ -43,104 +44,115 @@ public class TestDriver {
 			currentTestingOrientedMethodCalled = null;
 			parameters = "";
 			returnedValue = -2;
-			
+
 			int accountNumber;
 			int pin;
 			int balance;
 			int amount;
 			int lockNumber;
-			
+
 			switch (choice) {
-				case "0": // OPEN
-					currentMethodCalled = TestDriverMethod.OPEN;
-					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					accountNumber = getInputFromUser("Enter Account#");
-					pin = getInputFromUser("Enter PIN");
-					balance = getInputFromUser("Enter initial balance");
-					returnedValue = acc.open(accountNumber, pin, balance);
-					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
-					pressAnyKeyToContinue();
-					break;
-				case "1": // DEPOSIT
-					currentMethodCalled = TestDriverMethod.DEPOSIT;
-					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					amount = getInputFromUser("Enter Deposit Amount");
-					returnedValue = acc.deposit(amount);
-					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
-					pressAnyKeyToContinue();
-					break;
-				case "2": // WITHDRAW
-					currentMethodCalled = TestDriverMethod.WITHDRAW;
-					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					amount = getInputFromUser("Enter Withdraw Amount");
-					returnedValue = acc.withdraw(amount);
-					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
-					pressAnyKeyToContinue();
-					break;
-				case "3": // BALANCE
-					currentMethodCalled = TestDriverMethod.BALANCE;
-					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					returnedValue = acc.balance();
-					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
-					pressAnyKeyToContinue();
-					break;
-				case "4": // LOCK
-					currentMethodCalled = TestDriverMethod.LOCK;
-					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					lockNumber = getInputFromUser("Enter Lock#");
-					returnedValue = acc.lock(lockNumber);
-					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
-					pressAnyKeyToContinue();
-					break;
-				case "5": // UNLOCK
-					currentMethodCalled = TestDriverMethod.UNLOCK;
-					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					lockNumber = getInputFromUser("Enter Lock#");
-					returnedValue = acc.unlock(lockNumber);
-					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
-					pressAnyKeyToContinue();
-					break;
-				case "6": // LOGIN
-					currentMethodCalled = TestDriverMethod.LOGIN;
-					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					accountNumber = getInputFromUser("Enter Account#");
-					returnedValue = acc.login(accountNumber);
-					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
-					pressAnyKeyToContinue();
-					break;
-				case "7": // PIN
-					currentMethodCalled = TestDriverMethod.PIN;
-					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					pin = getInputFromUser("Enter PIN");
-					returnedValue = acc.pin(pin);
-					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
-					pressAnyKeyToContinue();
-					break;
-				case "8": // LOGOUT
-					currentMethodCalled = TestDriverMethod.LOGOUT;
-					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					returnedValue = acc.logout();
-					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
-					pressAnyKeyToContinue();
-					break;
-					
+			case "0": // OPEN
+				currentMethodCalled = TestDriverMethod.OPEN;
+				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+				accountNumber = getInputFromUser("Enter Account#");
+				pin = getInputFromUser("Enter PIN");
+				balance = getInputFromUser("Enter initial balance");
+				returnedValue = acc.open(accountNumber, pin, balance);
+				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				pressAnyKeyToContinue();
+				break;
+
+			case "1": // DEPOSIT
+				currentMethodCalled = TestDriverMethod.DEPOSIT;
+				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+				amount = getInputFromUser("Enter Deposit Amount");
+				returnedValue = acc.deposit(amount);
+				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				pressAnyKeyToContinue();
+				break;
+
+			case "2": // WITHDRAW
+				currentMethodCalled = TestDriverMethod.WITHDRAW;
+				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+				amount = getInputFromUser("Enter Withdraw Amount");
+				returnedValue = acc.withdraw(amount);
+				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				pressAnyKeyToContinue();
+				break;
+
+			case "3": // BALANCE
+				currentMethodCalled = TestDriverMethod.BALANCE;
+				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+				returnedValue = acc.balance();
+				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				pressAnyKeyToContinue();
+				break;
+
+			case "4": // LOCK
+				currentMethodCalled = TestDriverMethod.LOCK;
+				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+				lockNumber = getInputFromUser("Enter Lock#");
+				returnedValue = acc.lock(lockNumber);
+				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				pressAnyKeyToContinue();
+				break;
+
+			case "5": // UNLOCK
+				currentMethodCalled = TestDriverMethod.UNLOCK;
+				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+				lockNumber = getInputFromUser("Enter Lock#");
+				returnedValue = acc.unlock(lockNumber);
+				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				pressAnyKeyToContinue();
+				break;
+
+			case "6": // LOGIN
+				currentMethodCalled = TestDriverMethod.LOGIN;
+				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+				accountNumber = getInputFromUser("Enter Account#");
+				returnedValue = acc.login(accountNumber);
+				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				pressAnyKeyToContinue();
+				break;
+
+			case "7": // PIN
+				currentMethodCalled = TestDriverMethod.PIN;
+				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+				pin = getInputFromUser("Enter PIN");
+				returnedValue = acc.pin(pin);
+				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				pressAnyKeyToContinue();
+				break;
+
+			case "8": // LOGOUT
+				currentMethodCalled = TestDriverMethod.LOGOUT;
+				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+				returnedValue = acc.logout();
+				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				pressAnyKeyToContinue();
+				break;
+
+			case "a": // SHOW BALANCE
+				break;
+
+			case "b": // SHOW STATE
+				break;
+
+			case "c": // SHOW LOCKED STATUS
+				break;
 				
-				case "a": // SHOW BALANCE
-					break;
-				case "b": // SHOW STATE
-					break;
-				case "c": // SHOW LOCKED STATUS
-					break;
-				case "d": // SHOW NUBER OF UNSUCCESSFUL LOGIN ATTEMPTS
-					break;
-				default:
-					System.out.println("DEFAULT");
+			case "d": // SHOW NUBER OF UNSUCCESSFUL LOGIN ATTEMPTS
+				break;
+				
+			default:
+				break;
 			}
-			
+
 			TestSuiteData.add(currentMethodCalled, parameters, null, null, null);
-			
+
 		} while (!choice.equals("q"));
-		
+
 		System.out.println("Quitting Account Driver...");
 		System.out.println(strLine + "\n\t\tTHANK YOU!!!\n" + strLine);
 		System.out.println(String.format("Test: %s", TestSuiteData.getTestCase()));
@@ -150,24 +162,23 @@ public class TestDriver {
 		// TODO Auto-generated method stub
 		int data = -1;
 		boolean hasError = false;
-		
+
 		System.out.println(message + ":\n");
-		
+
 		do {
 			if (hasError) {
 				System.out.println("Invalid Input!!!");
 				System.out.println("Please try again...");
 				System.out.println(message + ":\n");
 			}
-			
+
 			try {
 				data = Integer.parseInt(message);
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				hasError = true;
 			}
-		}while (hasError);
-		
+		} while (hasError);
+
 		return data;
 	}
 
@@ -180,7 +191,7 @@ public class TestDriver {
 			System.out.println("Type: Class Method");
 			System.out.println("Method: " + currentMethodCalled);
 		}
-		
+
 		if (currentTestingOrientedMethodCalled != null) {
 			System.out.println("Class: Account");
 			System.out.println("Type: Testing - Oriented Method");
@@ -191,36 +202,34 @@ public class TestDriver {
 	private static String showMenu() {
 		// TODO Auto-generated method stub
 		int i = 0;
-		char j= 'a';
-		
+		char j = 'a';
+
 		// Show Driver Method for the Account Class
-		System.out.println("\n\nDriver for the Account"
-				+ "\n" + strLine + "\n");
-		
-		for (TestDriverMethod testDriverMethod : TestDriverMethod.values()) { 
-		    System.out.println(String.format("\t%d. %s", i++, testDriverMethod));
+		System.out.println("\n\nDriver for the Account" + "\n" + strLine + "\n");
+
+		for (TestDriverMethod testDriverMethod : TestDriverMethod.values()) {
+			System.out.println(String.format("\t%d. %s", i++, testDriverMethod));
 		}
-		
+
 		// Show Testing-Oriented Method for Account Class
-		System.out.println("\n\nTesting-Oriented Methods"
-				+ "\n" + strLine + "\n");
-		for (TestingOrientedMethod testingOrientedMethod : TestingOrientedMethod.values()) { 
-		    System.out.println(String.format("\t%c. %s", j++, testingOrientedMethod).replace('_', ' '));
+		System.out.println("\n\nTesting-Oriented Methods" + "\n" + strLine + "\n");
+		for (TestingOrientedMethod testingOrientedMethod : TestingOrientedMethod.values()) {
+			System.out.println(String.format("\t%c. %s", j++, testingOrientedMethod).replace('_', ' '));
 		}
-		
+
 		System.out.println(String.format("\n\n\t%c. %s", 'q', "Quit Account Driver"));
 		System.out.println("\n\nEnter you choice:\n");
-		
+
 		String choice = scanner.nextLine().toLowerCase();
-		
+
 		// Validate Input
-		while(!validateInput(choice, i, j)) {
+		while (!validateInput(choice, i, j)) {
 			System.out.println("\n\nINVALID INPUT!!!");
 			System.out.println("Enter you choice:\n");
-			
+
 			choice = scanner.nextLine().toLowerCase();
 		}
-		
+
 		return choice;
 	}
 
@@ -231,16 +240,15 @@ public class TestDriver {
 		try {
 			ch = Integer.parseInt(choice);
 			isValidInput = (ch >= 0 && ch < i);
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			if (choice.length() == 1) {
 				char c = choice.charAt(0);
-				isValidInput = (c >= 'a' && c < j) || (c == 'q'); 
+				isValidInput = (c >= 'a' && c < j) || (c == 'q');
 			}
 		}
 		return isValidInput;
 	}
-		
+
 	@SuppressWarnings("unused")
 	private static void showWelcomeMessage() {
 		// TODO Auto-generated method stub
@@ -249,9 +257,9 @@ public class TestDriver {
 		System.out.println("\t\t  Sukanta Sharma");
 		System.out.println("\t\t     A2042623");
 		System.out.println("\n" + strLine + "\n" + strLine + "\n\n");
-			
+
 		pressAnyKeyToContinue();
-		
+
 	}
 
 	private static void pressAnyKeyToContinue() {
