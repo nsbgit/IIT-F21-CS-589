@@ -119,7 +119,7 @@ public class TestDriver {
 				case "8": // LOGOUT
 					currentMethodCalled = TestDriverMethod.LOGOUT;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-
+					returnedValue = acc.logout();
 					System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
