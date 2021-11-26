@@ -48,7 +48,7 @@ public class account {
 	 */
 	private int x8;
 	/**
-	 * Number of Attempt
+	 * Number of Unsuccessful Login Attempt
 	 */
 	private int x9;
 
@@ -93,6 +93,13 @@ public class account {
 		return (x2 == 0)? LockedStatus.UNLOCKED : LockedStatus.LOCKED;
 	}
 	
+	/**
+	 * Get Number of Unsuccessful Login Attempts
+	 * @return Number of Unsuccessful Login Attempts
+	 * */
+	public final int getNumbeOfUnsuccessfulLoginAttemts() {
+		return x9;
+	}
 	/**
 	 * Constructor
 	 */
