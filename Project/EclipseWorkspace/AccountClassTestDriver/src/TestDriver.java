@@ -9,7 +9,6 @@
  */
 
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class TestDriver {
 
@@ -26,7 +25,7 @@ public class TestDriver {
 		String choice = "";
 		TestDriverMethod currentMethodCalled = null;
 		TestingOrientedMethod currentTestingOrientedMethodCalled = null;
-		ArrayList<String> methodsCalled = new ArrayList<String>();
+		//ArrayList<String> methodsCalled = new ArrayList<String>();
 		String parameters = "";
 		int returnedValue = -2;
 
