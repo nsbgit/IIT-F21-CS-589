@@ -89,9 +89,10 @@ public class account {
 	}
 
 	/**
-	 * The Desciption of the method to explain what the method does
+	 * provides pin # (parameter x)
 	 * 
-	 * @param the parameters used by the method
+	 * @param	x
+	 * 			PIN
 	 * @return the value returned by the method  0 --> Successful, -1 --> ERROR
 	 */
 	public final int pin(int x) {
