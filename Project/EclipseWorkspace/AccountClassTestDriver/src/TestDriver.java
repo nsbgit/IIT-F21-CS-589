@@ -134,6 +134,10 @@ public class TestDriver {
 				break;
 
 			case "a": // SHOW BALANCE
+				currentTestingOrientedMethodCalled = TestingOrientedMethod.SHOW_BALANCE;
+				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+				System.out.println(String.format("Balance: %d", acc.show_balance()));
+				pressAnyKeyToContinue();
 				break;
 
 			case "b": // SHOW STATE
