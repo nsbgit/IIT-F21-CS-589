@@ -47,6 +47,11 @@ public class TestDriver {
 			switch (choice) {
 				case "0": // OPEN
 					currentMethodCalled = TestDriverMethod.OPEN;
+					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
+					int accountNumber = getInputFromUser("Enter Account#");
+					int pin = getInputFromUser("Enter PIN");
+					int balance = getInputFromUser("Enter initial balance");
+					returnedValue = acc.open(accountNumber, pin, balance);
 					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
