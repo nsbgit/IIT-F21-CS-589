@@ -27,7 +27,9 @@ public class TestDriver {
 		TestingOrientedMethod currentTestingOrientedMethodCalled = null;
 		ArrayList<String> methodsCalled = new ArrayList<String>();
 		String parameters = "";
-		//TestSuiteData testSuiteData = new TestSuiteData();
+		int returnedValue = -2;
+		
+		account acc = new account();
 
 		// show welcome message
 		// TODO uncomment
@@ -40,58 +42,66 @@ public class TestDriver {
 			currentMethodCalled = null;
 			currentTestingOrientedMethodCalled = null;
 			parameters = "";
+			returnedValue = -2;
 			
 			switch (choice) {
 				case "0": // OPEN
 					currentMethodCalled = TestDriverMethod.OPEN;
-					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					
+					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "1": // DEPOSIT
 					currentMethodCalled = TestDriverMethod.DEPOSIT;
+					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					
 					pressAnyKeyToContinue();
 					break;
 				case "2": // WITHDRAW
 					currentMethodCalled = TestDriverMethod.WITHDRAW;
+					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					
 					pressAnyKeyToContinue();
 					break;
 				case "3": // BALANCE
 					currentMethodCalled = TestDriverMethod.BALANCE;
+					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					
 					pressAnyKeyToContinue();
 					break;
 				case "4": // LOCK
 					currentMethodCalled = TestDriverMethod.LOCK;
+					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					
 					pressAnyKeyToContinue();
 					break;
 				case "5": // UNLOCK
 					currentMethodCalled = TestDriverMethod.UNLOCK;
+					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					
 					pressAnyKeyToContinue();
 					break;
 				case "6": // LOGIN
 					currentMethodCalled = TestDriverMethod.LOGIN;
+					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					
 					pressAnyKeyToContinue();
 					break;
 				case "7": // PIN
 					currentMethodCalled = TestDriverMethod.PIN;
+					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					
 					pressAnyKeyToContinue();
 					break;
 				case "8": // LOGOUT
 					currentMethodCalled = TestDriverMethod.LOGOUT;
+					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 					
 					pressAnyKeyToContinue();
@@ -113,6 +123,31 @@ public class TestDriver {
 		System.out.println("Quitting Account Driver...");
 		System.out.println(strLine + "\n\t\tTHANK YOU!!!\n" + strLine);
 		System.out.println(String.format("Test: %s", TestSuiteData.getTestCase()));
+	}
+
+	private static int getInputFromUser(String message) {
+		// TODO Auto-generated method stub
+		int data = -1;
+		boolean hasError = false;
+		
+		System.out.println(message + ":\n");
+		
+		do {
+			if (hasError) {
+				System.out.println("Invalid Input!!!");
+				System.out.println("Please try again...");
+				System.out.println(message + ":\n");
+			}
+			
+			try {
+				data = Integer.parseInt(message);
+			}
+			catch (Exception e) {
+				hasError = true;
+			}
+		}while (hasError);
+		
+		return data;
 	}
 
 	private static void printCurrentMethodInfo(TestDriverMethod currentMethodCalled,
@@ -184,9 +219,7 @@ public class TestDriver {
 		}
 		return isValidInput;
 	}
-	
-
-	
+		
 	@SuppressWarnings("unused")
 	private static void showWelcomeMessage() {
 		// TODO Auto-generated method stub
