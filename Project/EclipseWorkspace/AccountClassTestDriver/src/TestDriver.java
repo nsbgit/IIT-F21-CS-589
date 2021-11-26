@@ -129,6 +129,10 @@ public class TestDriver {
 					break;
 				case "b": // SHOW STATE
 					break;
+				case "c": // SHOW LOCKED STATUS
+					break;
+				case "d": // SHOW NUBER OF UNSUCCESSFUL LOGIN ATTEMPTS
+					break;
 				default:
 					System.out.println("DEFAULT");
 			}
