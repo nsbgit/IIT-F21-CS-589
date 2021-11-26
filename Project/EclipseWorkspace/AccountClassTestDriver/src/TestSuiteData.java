@@ -29,10 +29,10 @@ public class TestSuiteData {
 
 		for (String cur : methodsCalled) {
 			if (isFirst) {
-				states.append(cur);
+				testCase.append(cur);
 				isFirst = false;
 			} else {
-				states.append(" " + cur);
+				testCase.append(" " + cur);
 			}
 
 		}
