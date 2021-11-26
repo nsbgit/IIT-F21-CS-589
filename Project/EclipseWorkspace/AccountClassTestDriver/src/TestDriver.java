@@ -81,14 +81,15 @@ public class TestDriver {
 				case "4": // LOCK
 					currentMethodCalled = TestDriverMethod.LOCK;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-					
+					int lockNumber = getInputFromUser("Enter Lock#");
+					returnedValue = acc.lock(lockNumber);
 					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
 				case "5": // UNLOCK
 					currentMethodCalled = TestDriverMethod.UNLOCK;
 					printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-
+					
 					System.out.println("\nThe valu returned by the method is: " + returnedValue + "\n");
 					pressAnyKeyToContinue();
 					break;
