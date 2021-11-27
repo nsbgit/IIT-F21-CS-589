@@ -34,7 +34,7 @@ public class TestDriver {
 
 		// show welcome message
 		// TODO uncomment
-		// showWelcomeMessage();
+		showWelcomeMessage();
 
 		// show menu
 		do {
@@ -60,7 +60,7 @@ public class TestDriver {
 				balance = getInputFromUser("Enter initial balance");
 				returnedValue = acc.open(accountNumber, pin, balance);
 				parameters = String.format("%d %d %d", accountNumber, pin, balance);
-				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				System.out.println("\n\t\tThe value returned by the method is: " + returnedValue + "\n");
 				pressEnterKeyToContinue();
 				break;
 
@@ -70,7 +70,7 @@ public class TestDriver {
 				amount = getInputFromUser("Enter Deposit Amount");
 				returnedValue = acc.deposit(amount);
 				parameters = String.format("%d", amount);
-				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				System.out.println("\n\t\tThe value returned by the method is: " + returnedValue + "\n");
 				pressEnterKeyToContinue();
 				break;
 
@@ -80,7 +80,7 @@ public class TestDriver {
 				amount = getInputFromUser("Enter Withdraw Amount");
 				returnedValue = acc.withdraw(amount);
 				parameters = String.format("%d", amount);
-				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				System.out.println("\n\t\tThe value returned by the method is: " + returnedValue + "\n");
 				pressEnterKeyToContinue();
 				break;
 
@@ -88,7 +88,7 @@ public class TestDriver {
 				currentMethodCalled = TestDriverMethod.BALANCE;
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 				returnedValue = acc.balance();
-				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				System.out.println("\n\t\tThe value returned by the method is: " + returnedValue + "\n");
 				pressEnterKeyToContinue();
 				break;
 
@@ -98,7 +98,7 @@ public class TestDriver {
 				lockNumber = getInputFromUser("Enter Lock#");
 				returnedValue = acc.lock(lockNumber);
 				parameters = String.format("%d", lockNumber);
-				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				System.out.println("\n\t\tThe value returned by the method is: " + returnedValue + "\n");
 				pressEnterKeyToContinue();
 				break;
 
@@ -108,7 +108,7 @@ public class TestDriver {
 				lockNumber = getInputFromUser("Enter Lock#");
 				returnedValue = acc.unlock(lockNumber);
 				parameters = String.format("%d", lockNumber);
-				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				System.out.println("\n\t\tThe value returned by the method is: " + returnedValue + "\n");
 				pressEnterKeyToContinue();
 				break;
 
@@ -118,7 +118,7 @@ public class TestDriver {
 				accountNumber = getInputFromUser("Enter Account#");
 				returnedValue = acc.login(accountNumber);
 				parameters = String.format("%d", accountNumber);
-				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				System.out.println("\n\t\tThe value returned by the method is: " + returnedValue + "\n");
 				pressEnterKeyToContinue();
 				break;
 
@@ -128,7 +128,7 @@ public class TestDriver {
 				pin = getInputFromUser("Enter PIN");
 				returnedValue = acc.pin(pin);
 				parameters = String.format("%d", pin);
-				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				System.out.println("\n\t\tThe value returned by the method is: " + returnedValue + "\n");
 				pressEnterKeyToContinue();
 				break;
 
@@ -136,35 +136,35 @@ public class TestDriver {
 				currentMethodCalled = TestDriverMethod.LOGOUT;
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 				returnedValue = acc.logout();
-				System.out.println("\nThe value returned by the method is: " + returnedValue + "\n");
+				System.out.println("\n\t\tThe value returned by the method is: " + returnedValue + "\n");
 				pressEnterKeyToContinue();
 				break;
 
 			case "a": // SHOW BALANCE
 				currentTestingOrientedMethodCalled = TestingOrientedMethod.SHOW_BALANCE;
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-				System.out.println(String.format("Balance: %d", acc.show_balance()));
+				System.out.println(String.format("\n\t\tBalance: %d", acc.show_balance()));
 				pressEnterKeyToContinue();
 				break;
 
 			case "b": // SHOW STATE
 				currentTestingOrientedMethodCalled = TestingOrientedMethod.SHOW_STATE;
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-				System.out.println(String.format("State: %s", acc.getCurrentState()).replace("_", " "));
+				System.out.println(String.format("\n\t\tState: %s", acc.getCurrentState()).replace("_", " "));
 				pressEnterKeyToContinue();
 				break;
 
 			case "c": // SHOW LOCKED STATUS
 				currentTestingOrientedMethodCalled = TestingOrientedMethod.SHOW_LOCKED_STATUS;
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-				System.out.println(String.format("Locked Status: %s", acc.getLockedStatus()).replace("_", " "));
+				System.out.println(String.format("\n\t\tLocked Status: %s", acc.getLockedStatus()).replace("_", " "));
 				pressEnterKeyToContinue();
 				break;
 				
 			case "d": // SHOW NUBER OF UNSUCCESSFUL LOGIN ATTEMPTS
 				currentTestingOrientedMethodCalled = TestingOrientedMethod.SHOW_NUMBER_OF_UNSECCESSFUL_LOGIN_ATTEMPTS;
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-				System.out.println(String.format("Number of Unsuccessful Login Attempts: %d", acc.getNumbeOfUnsuccessfulLoginAttemts()));
+				System.out.println(String.format("\n\t\tNumber of Unsuccessful Login Attempts: %d", acc.getNumbeOfUnsuccessfulLoginAttemts()));
 				pressEnterKeyToContinue();
 				break;
 				
@@ -178,7 +178,7 @@ public class TestDriver {
 
 		System.out.println("Quitting Account Driver...");
 		System.out.println(strLine + "\n\t\tTHANK YOU!!!\n" + strLine);
-		System.out.println(String.format("Test: %s", TestSuiteData.getTestCase()));
+		System.out.println(String.format("\n\n\t\tTest: %s", TestSuiteData.getTestCase()));
 	}
 
 	/**
@@ -222,7 +222,8 @@ public class TestDriver {
 	private static void printCurrentMethodInfo(TestDriverMethod currentMethodCalled,
 			TestingOrientedMethod currentTestingOrientedMethodCalled) {
 		// TODO Auto-generated method stub
-		System.out.println("\n\n");
+		for (int i = 0; i <= 50; i++) System.out.println("\n");
+		System.out.println(strLine);
 		if (currentMethodCalled != null) {
 			System.out.println("Class: Account");
 			System.out.println("Type: Class Method");
@@ -234,6 +235,7 @@ public class TestDriver {
 			System.out.println("Type: Testing - Oriented Method");
 			System.out.println("Method: " + currentTestingOrientedMethodCalled);
 		}
+		System.out.println(strLine + "\n");
 	}
 
 	/**
@@ -320,6 +322,7 @@ public class TestDriver {
         }  
         catch(Exception e)
         {}
+		for (int i = 0; i <= 50; i++) System.out.println("\n");
 	}
 
 }
