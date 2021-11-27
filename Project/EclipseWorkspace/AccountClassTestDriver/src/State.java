@@ -7,7 +7,7 @@
  *
  */
 public enum State {
-	INITIAL,
+	START,
 	IDLE,
 	CHECK_PIN,
 	READY,

@@ -23,7 +23,7 @@ public class account {
 	private int x3;
 	/**
 	 * State
-	 * <br/>-1	-->	INITIAL
+	 * <br/>-1	-->	START
 	 * <br/>0	-->	IDLE
 	 * <br/>1	-->	CHECK PIN --> LOGGED IN
 	 * <br/>2	-->	x2(LOCKED STATUS) = 1 --> LOCKED
@@ -68,7 +68,7 @@ public class account {
 	public final State getCurrentState() {
 		switch (x4) {
 		case -1:
-			return State.INITIAL;
+			return State.START;
 			
 		case 0:
 			return State.IDLE;
