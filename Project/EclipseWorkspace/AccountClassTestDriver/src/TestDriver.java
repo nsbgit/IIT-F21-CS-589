@@ -291,6 +291,9 @@ public class TestDriver {
 		return choice;
 	}
 
+	/**
+	 * Validate input of user for choice
+	 */
 	private static boolean validateInput(String choice, int i, char j) {
 		// TODO Auto-generated method stub
 		boolean isValidInput = false;
@@ -308,7 +311,7 @@ public class TestDriver {
 	}
 
 	/**
-	 * Show Welcome Message
+	 * Shows Welcome Message
 	 */
 	@SuppressWarnings("unused")
 	private static void showWelcomeMessage() {
@@ -326,7 +329,6 @@ public class TestDriver {
 	/**
 	 * Press Enter Key to Continue
 	 */
-
 	private static void pressEnterKeyToContinue() {
 		// TODO Auto-generated method stub
 		System.out.println("\nPress Enter key to continue...");
