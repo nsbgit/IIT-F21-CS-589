@@ -12,9 +12,9 @@ public class account {
 	 */
 	private int x1;
 	/**
-	 * Locked Status
-	 * <br/>0 --> UNLOCKED
-	 * <br/>1 --> LOCKED
+	 * Locked Status <br/>
+	 * 0 --> UNLOCKED <br/>
+	 * 1 --> LOCKED
 	 */
 	private int x2;
 	/**
@@ -22,13 +22,13 @@ public class account {
 	 */
 	private int x3;
 	/**
-	 * State
-	 * <br/>-1	-->	START
-	 * <br/>0	-->	IDLE
-	 * <br/>1	-->	CHECK PIN --> LOGGED IN
-	 * <br/>2	-->	x2(LOCKED STATUS) = 1 --> LOCKED
-	 * <br/>x1(Balance) < x7(Minimum Balance) --> OVERDRAWN
-	 * <br/>otherwise READY
+	 * State <br/>
+	 * -1 --> START <br/>
+	 * 0 --> IDLE <br/>
+	 * 1 --> CHECK PIN --> LOGGED IN <br/>
+	 * 2 --> x2(LOCKED STATUS) = 1 --> LOCKED <br/>
+	 * x1(Balance) < x7(Minimum Balance) --> OVERDRAWN <br/>
+	 * otherwise READY
 	 */
 	private int x4;
 	/**
@@ -60,22 +60,23 @@ public class account {
 	public final int show_balance() {
 		return x1;
 	} // testing oriented method
-	
+
 	/**
 	 * Get Current State (Testing-Oriented Method)
+	 * 
 	 * @return Current State
-	 * */
+	 */
 	public final State getCurrentState() {
 		switch (x4) {
 		case -1:
 			return State.START;
-			
+
 		case 0:
 			return State.IDLE;
-			
+
 		case 1:
 			return State.CHECK_PIN;
-			
+
 		case 2:
 			return (x2 == 1) ? State.LOCKED : ((x1 < x7) ? State.OVERDRAWN : State.READY);
 
@@ -87,19 +88,22 @@ public class account {
 
 	/**
 	 * Get Locked Status (Testing-Oriented Method)
+	 * 
 	 * @return Locked Status
-	 * */
+	 */
 	public final LockedStatus getLockedStatus() {
-		return (x2 == 0)? LockedStatus.UNLOCKED : LockedStatus.LOCKED;
+		return (x2 == 0) ? LockedStatus.UNLOCKED : LockedStatus.LOCKED;
 	}
-	
+
 	/**
 	 * Get Number of Unsuccessful Login Attempts (Testing-Oriented Method)
+	 * 
 	 * @return Number of Unsuccessful Login Attempts
-	 * */
+	 */
 	public final int getNumbeOfUnsuccessfulLoginAttemts() {
 		return x9;
 	}
+
 	/**
 	 * Constructor
 	 */
@@ -113,15 +117,13 @@ public class account {
 	}
 
 	/**
-	 * sets balance to the value of x, pin number to the value of y, and an account # to the value of z
+	 * sets balance to the value of x, pin number to the value of y, and an account
+	 * # to the value of z
 	 * 
-	 * @param	z
-	 * 			Account Number
-	 * @param	y
-	 * 			PIN
-	 * @param	x
-	 * 			Amount
-	 * @return the value returned by the method  0 --> Successful, -1 --> ERROR
+	 * @param z Account Number
+	 * @param y PIN
+	 * @param x Amount
+	 * @return the value returned by the method 0 --> Successful, -1 --> ERROR
 	 */
 	public final int open(int z, int y, int x) {
 		if ((x > 0) && (x4 == -1) && (y > 0) && (z > 0)) {
@@ -138,9 +140,8 @@ public class account {
 	/**
 	 * provides pin # (parameter x)
 	 * 
-	 * @param	x
-	 * 			PIN
-	 * @return the value returned by the method  0 --> Successful, -1 --> ERROR
+	 * @param x PIN
+	 * @return the value returned by the method 0 --> Successful, -1 --> ERROR
 	 */
 	public final int pin(int x) {
 		if (x4 != 1) { // Check if the current state is CHECK PIN
@@ -161,7 +162,7 @@ public class account {
 	/**
 	 * allows to logout from the account
 	 * 
-	 * @return the value returned by the method  0 --> Successful, -1 --> ERROR
+	 * @return the value returned by the method 0 --> Successful, -1 --> ERROR
 	 */
 	public final int logout() {
 		if ((x4 == 0) || (x2 == 1)) {
@@ -174,9 +175,8 @@ public class account {
 	/**
 	 * allows to login to the account, where x is an account #
 	 * 
-	 * @param	x
-	 * 			Account Number
-	 * @return the value returned by the method  0 --> Successful, -1 --> ERROR
+	 * @param x Account Number
+	 * @return the value returned by the method 0 --> Successful, -1 --> ERROR
 	 */
 	public final int login(int x) {
 		if (x4 != 0) {
@@ -205,9 +205,8 @@ public class account {
 	/**
 	 * locks an account where x is the lock #
 	 * 
-	 * @param	x
-	 * 			Lock Number
-	 * @return the value returned by the method  0 --> Successful, -1 --> ERROR
+	 * @param x Lock Number
+	 * @return the value returned by the method 0 --> Successful, -1 --> ERROR
 	 */
 	public final int lock(int x) {
 		if (x4 != 2) {
@@ -228,9 +227,8 @@ public class account {
 	/**
 	 * unlocks an account when x equals to the correct lock #
 	 * 
-	 * @param	x
-	 * 			Lock Number
-	 * @return the value returned by the method  0 --> Successful, -1 --> ERROR
+	 * @param x Lock Number
+	 * @return the value returned by the method 0 --> Successful, -1 --> ERROR
 	 */
 	public final int unlock(int x) {
 		if (x4 != 2) {
@@ -247,9 +245,8 @@ public class account {
 	/**
 	 * deposits amount d to the account
 	 * 
-	 * @param	d
-	 * 			Amount to deposit
-	 * @return the value returned by the method  0 --> Successful, -1 --> ERROR
+	 * @param d Amount to deposit
+	 * @return the value returned by the method 0 --> Successful, -1 --> ERROR
 	 */
 	public final int deposit(int d) {
 		if (x4 != 2) {
@@ -274,9 +271,8 @@ public class account {
 	/**
 	 * withdraws amount w from the account
 	 * 
-	 * @param	w
-	 * 			Amount to withdraw from the account
-	 * @return the value returned by the method  0 --> Successful, -1 --> ERROR
+	 * @param w Amount to withdraw from the account
+	 * @return the value returned by the method 0 --> Successful, -1 --> ERROR
 	 */
 	public final int withdraw(int w) {
 		if (x4 != 2) {

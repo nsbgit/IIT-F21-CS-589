@@ -7,10 +7,5 @@
  *
  */
 public enum State {
-	START,
-	IDLE,
-	CHECK_PIN,
-	READY,
-	LOCKED,
-	OVERDRAWN
+	START, IDLE, CHECK_PIN, READY, LOCKED, OVERDRAWN
 }

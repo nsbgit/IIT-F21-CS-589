@@ -18,6 +18,7 @@ public class TestDriver {
 
 	/**
 	 * Main Method
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -26,7 +27,7 @@ public class TestDriver {
 		String choice = "";
 		TestDriverMethod currentMethodCalled = null;
 		TestingOrientedMethod currentTestingOrientedMethodCalled = null;
-		//ArrayList<String> methodsCalled = new ArrayList<String>();
+		// ArrayList<String> methodsCalled = new ArrayList<String>();
 		String parameters = "";
 		int returnedValue = -2;
 
@@ -160,14 +161,15 @@ public class TestDriver {
 				System.out.println(String.format("\n\t\tLocked Status: %s", acc.getLockedStatus()).replace("_", " "));
 				pressEnterKeyToContinue();
 				break;
-				
+
 			case "d": // SHOW NUBER OF UNSUCCESSFUL LOGIN ATTEMPTS
 				currentTestingOrientedMethodCalled = TestingOrientedMethod.SHOW_NUMBER_OF_UNSECCESSFUL_LOGIN_ATTEMPTS;
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
-				System.out.println(String.format("\n\t\tNumber of Unsuccessful Login Attempts: %d", acc.getNumbeOfUnsuccessfulLoginAttemts()));
+				System.out.println(String.format("\n\t\tNumber of Unsuccessful Login Attempts: %d",
+						acc.getNumbeOfUnsuccessfulLoginAttemts()));
 				pressEnterKeyToContinue();
 				break;
-				
+
 			default:
 				break;
 			}
@@ -183,10 +185,10 @@ public class TestDriver {
 
 	/**
 	 * Get Valid User Input
-	 * @param	message
-	 * 			Message to print for taking input from user
-	 * @return	Valid User Input
-	 * */
+	 * 
+	 * @param message Message to print for taking input from user
+	 * @return Valid User Input
+	 */
 	private static int getInputFromUser(String message) {
 		// TODO Auto-generated method stub
 		int data = -1;
@@ -214,15 +216,18 @@ public class TestDriver {
 
 	/**
 	 * Print Current Invoked Method Information
-	 * @param	currentMethodCalled
-	 * 			TestDriverMethod enum value of current Test Driver Method or null
-	 * @param	currentTestingOrientedMethodCalled
-	 * 			TestingOrientedMethod enum value of current Test-Oriented Method or null
-	 * */
+	 * 
+	 * @param currentMethodCalled                TestDriverMethod enum value of
+	 *                                           current Test Driver Method or null
+	 * @param currentTestingOrientedMethodCalled TestingOrientedMethod enum value of
+	 *                                           current Test-Oriented Method or
+	 *                                           null
+	 */
 	private static void printCurrentMethodInfo(TestDriverMethod currentMethodCalled,
 			TestingOrientedMethod currentTestingOrientedMethodCalled) {
 		// TODO Auto-generated method stub
-		for (int i = 0; i <= 50; i++) System.out.println("\n");
+		for (int i = 0; i <= 50; i++)
+			System.out.println("\n");
 		System.out.println(strLine);
 		if (currentMethodCalled != null) {
 			System.out.println("Class: Account");
@@ -240,8 +245,9 @@ public class TestDriver {
 
 	/**
 	 * Show Menu
+	 * 
 	 * @return Valid choice
-	 * */
+	 */
 	private static String showMenu() {
 		// TODO Auto-generated method stub
 		int i = 0;
@@ -292,10 +298,9 @@ public class TestDriver {
 		return isValidInput;
 	}
 
-	
 	/**
 	 * Show Welcome Message
-	 * */
+	 */
 	@SuppressWarnings("unused")
 	private static void showWelcomeMessage() {
 		// TODO Auto-generated method stub
@@ -308,21 +313,20 @@ public class TestDriver {
 		pressEnterKeyToContinue();
 
 	}
-	
+
 	/**
 	 * Press Enter Key to Continue
-	 * */
+	 */
 
 	private static void pressEnterKeyToContinue() {
 		// TODO Auto-generated method stub
 		System.out.println("\nPress Enter key to continue...");
-		try
-        {
-            System.in.read();
-        }  
-        catch(Exception e)
-        {}
-		for (int i = 0; i <= 50; i++) System.out.println("\n");
+		try {
+			System.in.read();
+		} catch (Exception e) {
+		}
+		for (int i = 0; i <= 50; i++)
+			System.out.println("\n");
 	}
 
 }
