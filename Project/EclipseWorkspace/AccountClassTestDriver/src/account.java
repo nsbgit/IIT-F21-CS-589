@@ -257,7 +257,7 @@ public class account {
 		}
 		;
 		if ((x1 + d < x7) && (d > 0)) {
-			x1 = x1 + d - x6;
+			x1 = x1 + d - x6; // TODO BUG
 			return 0;
 		} else {
 			if (d > 0) {
