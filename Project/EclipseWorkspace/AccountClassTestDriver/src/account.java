@@ -105,7 +105,7 @@ public class account {
 	}
 
 	/**
-	 * Constructor
+	 * Constructor for parameters initialization
 	 */
 	public account() {
 		x2 = 0;
@@ -147,7 +147,7 @@ public class account {
 		if (x4 != 1) { // Check if the current state is CHECK PIN
 			return -1;
 		}
-		if (x == x3) { // TODO BUG T8 T16
+		if (x == x3) {
 			x4 = 2;
 			return 0;
 		} else {
