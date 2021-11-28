@@ -84,7 +84,7 @@ public class TestDriver {
 				balance = getInputFromUser("Enter initial balance");
 				returnedValue = acc.open(accountNumber, pin, balance);
 				parameters = String.format("%d %d %d", accountNumber, pin, balance);
-				System.out.println(String.format("\\n\\t\\tThe value returned by the method is: %d (%s)\n",
+				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n",
 						returnedValue, (returnedValue == 0) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
@@ -95,7 +95,7 @@ public class TestDriver {
 				amount = getInputFromUser("Enter Deposit Amount");
 				returnedValue = acc.deposit(amount);
 				parameters = String.format("%d", amount);
-				System.out.println(String.format("\\n\\t\\tThe value returned by the method is: %d (%s)\n",
+				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n",
 						returnedValue, (returnedValue == 0) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
@@ -106,7 +106,7 @@ public class TestDriver {
 				amount = getInputFromUser("Enter Withdraw Amount");
 				returnedValue = acc.withdraw(amount);
 				parameters = String.format("%d", amount);
-				System.out.println(String.format("\\n\\t\\tThe value returned by the method is: %d (%s)\n",
+				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n",
 						returnedValue, (returnedValue == 0) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
@@ -115,7 +115,7 @@ public class TestDriver {
 				currentMethodCalled = TestDriverMethod.BALANCE;
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 				returnedValue = acc.balance();
-				System.out.println(String.format("\\n\\t\\tThe value returned by the method is: %d (%s)\n",
+				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n",
 						returnedValue, (returnedValue == 0) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
@@ -126,7 +126,7 @@ public class TestDriver {
 				lockNumber = getInputFromUser("Enter Lock#");
 				returnedValue = acc.lock(lockNumber);
 				parameters = String.format("%d", lockNumber);
-				System.out.println(String.format("\\n\\t\\tThe value returned by the method is: %d (%s)\n",
+				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n",
 						returnedValue, (returnedValue == 0) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
@@ -137,7 +137,7 @@ public class TestDriver {
 				lockNumber = getInputFromUser("Enter Lock#");
 				returnedValue = acc.unlock(lockNumber);
 				parameters = String.format("%d", lockNumber);
-				System.out.println(String.format("\\n\\t\\tThe value returned by the method is: %d (%s)\n",
+				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n",
 						returnedValue, (returnedValue == 0) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
@@ -148,7 +148,7 @@ public class TestDriver {
 				accountNumber = getInputFromUser("Enter Account#");
 				returnedValue = acc.login(accountNumber);
 				parameters = String.format("%d", accountNumber);
-				System.out.println(String.format("\\n\\t\\tThe value returned by the method is: %d (%s)\n",
+				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n",
 						returnedValue, (returnedValue == 0) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
@@ -159,7 +159,7 @@ public class TestDriver {
 				pin = getInputFromUser("Enter PIN");
 				returnedValue = acc.pin(pin);
 				parameters = String.format("%d", pin);
-				System.out.println(String.format("\\n\\t\\tThe value returned by the method is: %d (%s)\n",
+				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n",
 						returnedValue, (returnedValue == 0) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
@@ -168,7 +168,7 @@ public class TestDriver {
 				currentMethodCalled = TestDriverMethod.LOGOUT;
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 				returnedValue = acc.logout();
-				System.out.println(String.format("\\n\\t\\tThe value returned by the method is: %d (%s)\n",
+				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n",
 						returnedValue, (returnedValue == 0) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
