@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class TestDriver {
 
 	private static final String strLine = "_____________________________________________________________________";
-//	private static Scanner scanner;
+	private static final int NUMBER_OF_NEW_LINES = 50;
 	private static Scanner scanner = new Scanner(System.in);
 
 	/**
@@ -235,7 +235,7 @@ public class TestDriver {
 	private static void printCurrentMethodInfo(TestDriverMethod currentMethodCalled,
 			TestingOrientedMethod currentTestingOrientedMethodCalled) {
 		// TODO Auto-generated method stub
-		for (int i = 0; i <= 50; i++)
+		for (int i = 0; i <= NUMBER_OF_NEW_LINES; i++)
 			System.out.println("\n");
 		System.out.println(strLine);
 		if (currentMethodCalled != null) {
@@ -336,7 +336,7 @@ public class TestDriver {
 			System.in.read();
 		} catch (Exception e) {
 		}
-		for (int i = 0; i <= 50; i++)
+		for (int i = 0; i <= NUMBER_OF_NEW_LINES; i++)
 			System.out.println("\n");
 	}
 
