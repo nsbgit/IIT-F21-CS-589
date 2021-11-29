@@ -36,7 +36,7 @@ enum TestingOrientedMethod {
 public class TestDriver {
 
 	private static final String strLine = "_____________________________________________________________________";
-	private static final int NUMBER_OF_NEW_LINES = 2;
+	private static final int NUMBER_OF_NEW_LINES = 50;
 	private static Scanner scanner = new Scanner(System.in);
 
 	/**
@@ -206,13 +206,15 @@ public class TestDriver {
 				break;
 			}
 
-			TestSuiteData.add(currentMethodCalled, parameters, null, null, null);
+			TestSuiteData.add(currentMethodCalled, parameters, acc.getCurrentState(), acc.show_balance(),
+					acc.getNumbeOfUnsuccessfulLoginAttemts());
 
 		} while (!choice.equals("q"));
 
 		System.out.println("Quitting Account Driver...");
 		System.out.println(strLine + "\n\t\tTHANK YOU!!!\n" + strLine);
-		System.out.println(String.format("\n\n\t\tTest: %s", TestSuiteData.getTestCase()));
+		System.out.println(String.format("\n\n\t\tTest Case Performed:\n%s", TestSuiteData.getTestCase()));
+		System.out.println(String.format("\n%s\n%s", strLine, TestSuiteData.getResult()));
 	}
 
 	/**
@@ -356,7 +358,7 @@ public class TestDriver {
 		// TODO Auto-generated method stub
 		System.out.println("\nPress Enter key to continue...");
 		try {
-//			System.in.read();
+			System.in.read();
 		} catch (Exception e) {
 		}
 		for (int i = 0; i <= NUMBER_OF_NEW_LINES; i++)
@@ -372,14 +374,10 @@ public class TestDriver {
  */
 class TestSuiteData {
 	private static StringBuilder testCase;
-	private static StringBuilder states;
-	private static StringBuilder paths;
-	private static StringBuilder output;
+	private static StringBuilder result;
 
 	private static ArrayList<String> methodsCalled = new ArrayList<String>();
-	private static ArrayList<String> transitStates = new ArrayList<String>();
-	private static ArrayList<String> transitPaths = new ArrayList<String>();
-	private static ArrayList<String> outputs = new ArrayList<String>();
+	private static ArrayList<String> results = new ArrayList<String>();
 
 	/**
 	 * @return the testCase
@@ -403,35 +401,48 @@ class TestSuiteData {
 	}
 
 	/**
-	 * @return the states
+	 * @return the result
 	 */
-	public static String getStates() {
-		states = new StringBuilder();
-		return states.toString().toUpperCase();
-	}
+	public static String getResult() {
+		result = new StringBuilder();
+		
+		boolean isFirst = true;
 
-	/**
-	 * @return the paths
-	 */
-	public static String getPaths() {
-		paths = new StringBuilder();
-		return paths.toString().toUpperCase();
+		for (String cur : results) {
+			if (isFirst) {
+				result.append(cur);
+				isFirst = false;
+			} else {
+				result.append("\n" + cur);
+			}
+
+		}
+		
+		return result.toString();
 	}
 
 	/**
 	 * Stores called method with parameter for the performed test cases
 	 * 
-	 * @param currentMethodCalled Current Called Method for Test Driver Class
-	 * @param parameters          parameters given if any
-	 * @param object              Not defined yet
-	 * @param object2             Not defined yet
+	 * @param currentMethodCalled  Current Called Method for Test Driver Class
+	 * @param parameters           parameters given if any
+	 * @param stateAfterTransition State after the transition is done due to the
+	 *                             current method called
+	 * @param balance              Current Balance
+	 * @param stateAfterTransition Number of unsuccessful login attempts
 	 */
-	public static void add(TestDriverMethod currentMethodCalled, String parameters, Object object, Object object2,
-			Object object3) {
+	public static void add(TestDriverMethod currentMethodCalled, String parameters, State stateAfterTransition,
+			int balance, int numberOfUnsuccessfulLoginAttempts) {
 		// TODO Auto-generated method stub
 		if (currentMethodCalled != null) {
-			methodsCalled.add(String.format("%s%s", currentMethodCalled,
-					((parameters.trim().isEmpty()) ? "" : " " + parameters)));
+			String method = String.format("%s%s", currentMethodCalled,
+					((parameters.trim().isEmpty()) ? "" : " " + parameters));
+			String performedResult = String.format("%s,%s,%s,%s", method,
+					stateAfterTransition.toString().replace("_", " "), balance, numberOfUnsuccessfulLoginAttempts);
+			methodsCalled.add(method);
+
+			results.add(performedResult);
+
 		}
 	}
 
