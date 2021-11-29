@@ -1,0 +1,4 @@
+Test#1: balance open 222 123 200 login 222 pin 111 pin 123 deposit 50 logout
+Test#2: logout open 444 125 500 login 444 pin 125 withdraw 50 balance logout 
+Test#3: open 1 1 1 login 444 pin 125 withdraw 50 balance logout
+$$
