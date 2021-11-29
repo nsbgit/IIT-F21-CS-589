@@ -36,7 +36,7 @@ enum TestingOrientedMethod {
 public class TestDriver {
 
 	private static final String strLine = "_____________________________________________________________________";
-	private static final int NUMBER_OF_NEW_LINES = 50;
+	private static final int NUMBER_OF_NEW_LINES = 2;
 	private static Scanner scanner = new Scanner(System.in);
 
 	/**
@@ -356,7 +356,7 @@ public class TestDriver {
 		// TODO Auto-generated method stub
 		System.out.println("\nPress Enter key to continue...");
 		try {
-			System.in.read();
+//			System.in.read();
 		} catch (Exception e) {
 		}
 		for (int i = 0; i <= NUMBER_OF_NEW_LINES; i++)
