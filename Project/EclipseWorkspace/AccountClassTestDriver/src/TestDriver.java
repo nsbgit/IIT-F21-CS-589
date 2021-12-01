@@ -36,7 +36,7 @@ enum TestingOrientedMethod {
 public class TestDriver {
 
 	private static final String strLine = "_____________________________________________________________________";
-	private static final int NUMBER_OF_NEW_LINES = 50;
+	private static final int NUMBER_OF_NEW_LINES = 2;
 	private static Scanner scanner = new Scanner(System.in);
 
 	/**
@@ -85,7 +85,7 @@ public class TestDriver {
 				returnedValue = acc.open(accountNumber, pin, balance);
 				parameters = String.format("%d %d %d", accountNumber, pin, balance);
 				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n", returnedValue,
-						(returnedValue == 0) ? "SUCCESS" : "FAILED"));
+						(returnedValue != -1) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
 
@@ -96,7 +96,7 @@ public class TestDriver {
 				returnedValue = acc.deposit(amount);
 				parameters = String.format("%d", amount);
 				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n", returnedValue,
-						(returnedValue == 0) ? "SUCCESS" : "FAILED"));
+						(returnedValue != -1) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
 
@@ -107,7 +107,7 @@ public class TestDriver {
 				returnedValue = acc.withdraw(amount);
 				parameters = String.format("%d", amount);
 				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n", returnedValue,
-						(returnedValue == 0) ? "SUCCESS" : "FAILED"));
+						(returnedValue != -1) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
 
@@ -115,8 +115,8 @@ public class TestDriver {
 				currentMethodCalled = TestDriverMethod.BALANCE;
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 				returnedValue = acc.balance();
-				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n", returnedValue,
-						(returnedValue == 0) ? "SUCCESS" : "FAILED"));
+				System.out.println(String.format("\n\t\tThe value returned by the method is: Balance = %d (%s)\n",
+						returnedValue, (returnedValue != -1) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
 
@@ -127,7 +127,7 @@ public class TestDriver {
 				returnedValue = acc.lock(lockNumber);
 				parameters = String.format("%d", lockNumber);
 				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n", returnedValue,
-						(returnedValue == 0) ? "SUCCESS" : "FAILED"));
+						(returnedValue != -1) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
 
@@ -138,7 +138,7 @@ public class TestDriver {
 				returnedValue = acc.unlock(lockNumber);
 				parameters = String.format("%d", lockNumber);
 				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n", returnedValue,
-						(returnedValue == 0) ? "SUCCESS" : "FAILED"));
+						(returnedValue != -1) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
 
@@ -149,7 +149,7 @@ public class TestDriver {
 				returnedValue = acc.login(accountNumber);
 				parameters = String.format("%d", accountNumber);
 				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n", returnedValue,
-						(returnedValue == 0) ? "SUCCESS" : "FAILED"));
+						(returnedValue != -1) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
 
@@ -160,7 +160,7 @@ public class TestDriver {
 				returnedValue = acc.pin(pin);
 				parameters = String.format("%d", pin);
 				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n", returnedValue,
-						(returnedValue == 0) ? "SUCCESS" : "FAILED"));
+						(returnedValue != -1) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
 
@@ -169,7 +169,7 @@ public class TestDriver {
 				printCurrentMethodInfo(currentMethodCalled, currentTestingOrientedMethodCalled);
 				returnedValue = acc.logout();
 				System.out.println(String.format("\n\t\tThe value returned by the method is: %d (%s)\n", returnedValue,
-						(returnedValue == 0) ? "SUCCESS" : "FAILED"));
+						(returnedValue != -1) ? "SUCCESS" : "FAILED"));
 				pressEnterKeyToContinue();
 				break;
 
@@ -207,13 +207,15 @@ public class TestDriver {
 			}
 
 			TestSuiteData.add(currentMethodCalled, parameters, acc.getCurrentState(), acc.show_balance(),
-					acc.getNumbeOfUnsuccessfulLoginAttemts());
+					acc.getNumbeOfUnsuccessfulLoginAttemts(), returnedValue);
 
 		} while (!choice.equals("q"));
 
 		System.out.println("Quitting Account Driver...");
 		System.out.println(strLine + "\n\t\tTHANK YOU!!!\n" + strLine);
 		System.out.println(String.format("\n\n\t\tTest Case Performed:\n%s", TestSuiteData.getTestCase()));
+		System.out.println(
+				String.format("\n\n\t\tTest Case Performed as function:\n%s", TestSuiteData.getFunctionTestCase()));
 		System.out.println(String.format("\n%s\n%s", strLine, TestSuiteData.getResult()));
 	}
 
@@ -301,7 +303,7 @@ public class TestDriver {
 		}
 
 		System.out.println(String.format("\n\n\t%c. %s", 'q', "Quit Account Driver"));
-		System.out.println("\n\nEnter you choice:\n");
+		System.out.println("\n\nEnter your choice:\n");
 
 		String choice = scanner.nextLine().toLowerCase();
 
@@ -358,7 +360,7 @@ public class TestDriver {
 		// TODO Auto-generated method stub
 		System.out.println("\nPress Enter key to continue...");
 		try {
-			System.in.read();
+//			System.in.read();
 		} catch (Exception e) {
 		}
 		for (int i = 0; i <= NUMBER_OF_NEW_LINES; i++)
@@ -377,6 +379,7 @@ class TestSuiteData {
 	private static StringBuilder result;
 
 	private static ArrayList<String> methodsCalled = new ArrayList<String>();
+	private static ArrayList<String> functionsCalled = new ArrayList<String>();
 	private static ArrayList<String> results = new ArrayList<String>();
 
 	/**
@@ -401,11 +404,32 @@ class TestSuiteData {
 	}
 
 	/**
+	 * @return the testCase as function()
+	 */
+	public static String getFunctionTestCase() {
+		testCase = new StringBuilder();
+
+		boolean isFirst = true;
+
+		for (String cur : functionsCalled) {
+			if (isFirst) {
+				testCase.append(cur);
+				isFirst = false;
+			} else {
+				testCase.append(", " + cur);
+			}
+
+		}
+
+		return testCase.toString().toLowerCase();
+	}
+
+	/**
 	 * @return the result
 	 */
 	public static String getResult() {
 		result = new StringBuilder();
-		
+
 		boolean isFirst = true;
 
 		for (String cur : results) {
@@ -417,7 +441,7 @@ class TestSuiteData {
 			}
 
 		}
-		
+
 		return result.toString();
 	}
 
@@ -430,17 +454,44 @@ class TestSuiteData {
 	 *                             current method called
 	 * @param balance              Current Balance
 	 * @param stateAfterTransition Number of unsuccessful login attempts
+	 * @param returnedValue        Value returned by the account method
 	 */
 	public static void add(TestDriverMethod currentMethodCalled, String parameters, State stateAfterTransition,
-			int balance, int numberOfUnsuccessfulLoginAttempts) {
+			int balance, int numberOfUnsuccessfulLoginAttempts, int returnedValue) {
 		// TODO Auto-generated method stub
 		if (currentMethodCalled != null) {
 			String method = String.format("%s%s", currentMethodCalled,
 					((parameters.trim().isEmpty()) ? "" : " " + parameters));
-			String performedResult = String.format("%s,%s,%s,%s", method,
-					stateAfterTransition.toString().replace("_", " "), balance, numberOfUnsuccessfulLoginAttempts);
-			methodsCalled.add(method);
+			String performedResult = String.format("%s,%s,%s,%s,%s", method,
+					stateAfterTransition.toString().replace("_", " "), balance, numberOfUnsuccessfulLoginAttempts,
+					returnedValue);
 
+			String function = "";
+
+			switch (currentMethodCalled) {
+			case BALANCE:
+			case LOGOUT:
+				function = String.format("%s()", currentMethodCalled.toString().toLowerCase());
+				break;
+			case DEPOSIT:
+			case LOCK:
+			case LOGIN:
+			case PIN:
+			case UNLOCK:
+			case WITHDRAW:
+				function = String.format("%s(%s)", currentMethodCalled.toString().toLowerCase(), parameters);
+				break;
+			case OPEN:
+				String param = parameters.replace(" ", ",");
+				function = String.format("%s(%s)", currentMethodCalled.toString().toLowerCase(), param);
+				break;
+			default:
+				break;
+
+			}
+
+			methodsCalled.add(method);
+			functionsCalled.add(function);
 			results.add(performedResult);
 
 		}
