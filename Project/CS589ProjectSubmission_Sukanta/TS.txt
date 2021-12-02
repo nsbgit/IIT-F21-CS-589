@@ -1,0 +1,12 @@
+Test#1: open 100 123 200 login 150 login 140 login 100 pin 1 pin 2 pin 3 login 150 login 100 logout login 140 login 100 pin 123 balance balance deposit 50 deposit 50 lock 321 balance balance unlock 321 lock 321 unlock 321 balance withdraw 10 withdraw 10 balance withdraw 100 lock 321 balance unlock 321 balance balance deposit 20 balance lock 321 unlock 321 balance deposit 100 balance logout login 140
+Test#2: open 100 123 190 login 100 pin 123 balance logout login 135 login 100 pin 123 deposit 10 deposit 10 lock 321 unlock 321 deposit 10 deposit 100 withdraw 100 balance logout login 100 pin 1 logout login 100 pin 2 pin 2 pin 2 login 100 pin 2 pin 123 lock 321 unlock 321 lock 321 unlock 321 deposit 10 logout
+Test#3: open 100 123 190 login 100 pin 123 deposit 100 logout login 100 pin 2 pin 123 withdraw 100 deposit 10 lock 321 unlock 321 deposit 100 deposit 10 balance lock 321 unlock 321 withdraw 100 deposit 100 withdraw 10 deposit 10 withdraw 10 lock 321 unlock 321 deposit 10 withdraw 100 logout login 100 pin 123 logout
+Test#4: open 100 123 190 login 100 pin 123 logout
+Test#5: open 100 123 300 login 100 pin 123 lock 321 unlock 321 withdraw 10 withdraw 100 deposit 100 lock 321 unlock 321 logout login 100 pin 123 deposit 10 logout login 100 pin 123 withdraw 10 logout login 100 pin 123 logout
+Test#6: open 100 123 200 open 100 123 200 logout pin 123 deposit 100 withdraw 100 balance lock 321 unlock 321
+Test#7: open 100 123 200 login 100 open -100 123 200 login 100 deposit 100 withdraw 100 balance lock 321 unlock 0
+Test#8: open 100 123 200 login 100 pin 123 open 100 -123 200 login 100 pin 123 withdraw 0 lock 123 unlock 123
+Test#9: open 100 123 190 login 100 pin 123 open -100 -123 200 login 100 pin 123 withdraw 100 lock 123 unlock 321
+Test#10: open 100 123 190 login 100 pin 123 lock 321 open 100 123 -200 login 100 logout pin 123 deposit 100 withdraw 100 lock 321 unlock 12
+Test#11: open -100 123 200 open 100 -123 200 open -100 -123 200 open 100 123 -200 open -100 123 -200 open 100 -123 -200 open -100 -123 -200 open 100 123 190 open -100 123 -200 open 100 -123 -200 open -100 -123 -200 login 100 pin 123 withdraw 200 withdraw -10 deposit 0 deposit 100 deposit -10
+$$
