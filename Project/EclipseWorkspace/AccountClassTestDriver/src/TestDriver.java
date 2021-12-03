@@ -10,6 +10,8 @@
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
 enum LockedStatus {
 	LOCKED, UNLOCKED
@@ -36,7 +38,7 @@ enum TestingOrientedMethod {
 public class TestDriver {
 
 	private static final String strLine = "_____________________________________________________________________";
-	private static final int NUMBER_OF_NEW_LINES = 30;
+	private static final int NUMBER_OF_NEW_LINES = 2;
 	private static Scanner scanner = new Scanner(System.in);
 
 	/**
@@ -55,6 +57,8 @@ public class TestDriver {
 		int returnedValue = -2;
 
 		account acc = new account();
+		
+		acc.testCaseNumber = getInputFromUser("Enter test Case#:") + "";
 
 		// show welcome message
 		// TODO uncomment
@@ -217,7 +221,45 @@ public class TestDriver {
 		System.out.println(
 				String.format("\n\n\t\tTest Case Performed as function:\n%s", TestSuiteData.getFunctionTestCase()));
 		System.out.println(String.format("\n%s\n%s", strLine, TestSuiteData.getResult()));
+		
+		
+		
+		pritntTT("TT1", acc.tt1);
+		pritntTT("TT2", acc.tt2);
+		pritntTT("TT3", acc.tt3);
+		pritntTT("TT4", acc.tt4);
+		pritntTT("TT5", acc.tt5);
+		pritntTT("TT6", acc.tt6);
+		pritntTT("TT7", acc.tt7);
+		pritntTT("TT8", acc.tt8);
+		pritntTT("TT9", acc.tt9);
+		pritntTT("TT10", acc.tt10);
+		pritntTT("TT11", acc.tt11);
+		pritntTT("TT12", acc.tt12);
+		pritntTT("TT13", acc.tt13);
+		pritntTT("TT14", acc.tt14);
+		pritntTT("TT15", acc.tt15);
+		pritntTT("TT16", acc.tt16);
+		pritntTT("TT17", acc.tt17);
+		pritntTT("TT18", acc.tt18);
+		pritntTT("TT19", acc.tt19);
+		pritntTT("TT20", acc.tt20);
+		pritntTT("TT21", acc.tt21);
+		pritntTT("TT22", acc.tt22);
 	}
+	
+	
+
+	private static void pritntTT(String truthTableName, Hashtable<String, String> tT) {
+		// TODO Auto-generated method stub
+		System.out.println("\n\n\n" + truthTableName);
+		
+		tT.entrySet().forEach(entry -> {
+		    System.out.println(entry.getKey() + "" + entry.getValue() + "");
+		});
+	}
+
+
 
 	/**
 	 * Get Valid User Input
@@ -360,7 +402,7 @@ public class TestDriver {
 		// TODO Auto-generated method stub
 		System.out.println("\nPress Enter key to continue...");
 		try {
-			String ip = scanner.nextLine().toLowerCase();
+			//String ip = scanner.nextLine().toLowerCase();
 		} catch (Exception e) {
 		}
 		for (int i = 0; i <= NUMBER_OF_NEW_LINES; i++)
